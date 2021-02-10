@@ -10,6 +10,8 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import ('sb-admin-2')
 
+window.Noty = require('noty');
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
