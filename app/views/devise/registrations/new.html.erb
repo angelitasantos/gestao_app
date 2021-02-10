@@ -1,35 +1,40 @@
-<div class="container form-user">
-  <div class="card o-hidden border-0 shadow-lg my-5 form-content">
-    <h3 class="text-center mt-2 mb-2">Registrar</h3>
+<div class="container form-content">
 
+  <div class="card o-hidden border-0 shadow-lg my-5 form-user">
+    <h3 class="text-center mt-5 mb-5">Registrar</h3>
+
+    <!-- Formulário -->
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
-
+      
+      <!-- E-mail -->
       <div class="field mt-1">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
-      </div>
+        <%= f.email_field :email, autofocus: true, placeholder: "Digite um e-mail válido", autocomplete: "email", class: "form-control" %>
+      </div><!-- E-mail -->
 
+      <!-- Senha -->
       <div class="field mt-1">
-        <%= f.label :password %>
         <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> caracteres mínimos)</em>
+          <em>(Mínimo: <%= @minimum_password_length %> caracteres)</em>
         <% end %><br />
-        <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
-      </div>
+        <%= f.password_field :password, placeholder: "Digite uma senha válida", autocomplete: "new-password", class: "form-control" %>
+      </div><!-- Senha -->
 
+      <!-- Confirmar senha -->
       <div class="field mt-1">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
-      </div>
+        <%= f.password_field :password_confirmation, placeholder: "Confirme a senha", autocomplete: "new-password", class: "form-control" %>
+      </div><!-- Confirmar senha -->
 
+      <!-- Botão -->
       <div class="actions">
         <%= f.submit "Registrar", class: "mt-2 mb-2 btn btn-success btn-block" %>
-      </div>
-    <% end %>
+      </div><!-- Botão -->
+
+    <% end %><!-- Formulário -->
 
     <%= link_to 'Entrar', new_user_session_path, class: "btn btn-light btn-block" %>
     <%= link_to 'Esqueceu sua senha', new_user_password_path, class: "btn btn-light btn-block" %>
 
-  </div>
-</div>
+  </div><!-- Formulário User -->
+
+</div><!-- Formulário Content -->

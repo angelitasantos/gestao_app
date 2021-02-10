@@ -1,33 +1,39 @@
-<div class="container form-user">
-  <div class="card o-hidden border-0 shadow-lg my-5 form-content">
-    <h3 class="text-center mt-2 mb-2">Entrar</h3>
+<div class="container form-content">
 
+  <div class="card o-hidden border-0 shadow-lg my-5 form-user">
+    <h3 class="text-center mt-5 mb-5">Entrar</h3>
+
+    <!-- Formulário -->
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="field mt-1">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
-      </div>
 
+      <!-- E-mail -->
       <div class="field mt-1">
-        <%= f.label :password %><br />
-        <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
-      </div>
+        <%= f.email_field :email, placeholder: "Digite seu e-mail", autofocus: true, autocomplete: "email", class: "form-control" %>
+      </div><!-- E-mail -->
 
+      <!-- Senha -->
+      <div class="field mt-1">
+        <%= f.password_field :password, placeholder: "Digite sua senha", autocomplete: "current-password", class: "form-control" %>
+      </div><!-- Senha -->
+
+      <!-- Senha -->
       <% if devise_mapping.rememberable? %>
-        <div class="field mt-1">
+        <div class="field mt-2 text-right">
           <%= f.check_box :remember_me %>
           <%= f.label :remember_me %>
         </div>
       <% end %>
 
-      <div class="actions mb-2">
-        <%= f.submit "Entrar", class: "btn btn-success btn-block" %>
-      </div>
-    <% end %>
+      <!-- Botão -->
+      <div class="actions">
+        <%= f.submit "Entrar", class: "mt-2 mb-2 btn btn-success btn-block" %>
+      </div><!-- Botão -->
+
+    <% end %><!-- Formulário -->
 
     <%= link_to 'Registrar', new_user_registration_path, class: "btn btn-light btn-block" %>
     <%= link_to 'Esqueceu sua senha', new_user_password_path, class: "btn btn-light btn-block" %>
   
-  </div>
+  </div><!-- Formulário User -->
 
-</div>
+</div><!-- Formulário Content -->

@@ -1,4 +1,5 @@
 <div class="container">
+
   <div class="row">
 
     <!-- Profile Avatar -->
@@ -6,19 +7,24 @@
 
       <div class="card shadow mb-4">
 
-        <!-- Card Header - Dropdown -->
+        <!-- Card Header -->
         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
           <h6 class="m-0 font-weight-bold text-primary">Perfil</h6>
-        </div><!-- Card Header - Dropdown -->
+        </div><!-- Card Header -->
 
         <!-- Card Body -->
         <div class="card-body">
           <%= image_tag 'profile.png', class: 'mx-auto d-block img-thumbnail profile-round' %>     
         </div><!-- Card Body -->
 
-      </div><!-- Card Body -->
+        <!-- Card Footer -->
+        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+          <h6 class="m-0">Upload Imagem</h6>
+        </div><!-- Card Footer -->
 
-    </div><!-- Profile Shadow -->
+      </div><!-- Card Shadow -->
+
+    </div><!-- Profile Avatar -->
 
     <!-- Profile Form -->
     <div class="col-xl-8 col-lg-7">
@@ -32,76 +38,91 @@
 
         <!-- Card Body -->
         <div class="card-body">
+
+          <!-- Formulário -->
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
             <%= render "devise/shared/error_messages", resource: resource %>
             
+            <!-- Nome / Sobrenome -->
             <div class="form-group row">
-              <div class="col-6">
-                <label>Nome</label>
-                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
-              </div>
-              <div class="col-6">
-                <label>Email</label>
-                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
-              </div>
-              
-            </div>
 
+              <!-- Nome -->
+              <div class="col-md-6">
+                <label class="mt-2">Nome</label>
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+              </div><!-- Nome -->
+
+              <!-- Sobrenome -->
+              <div class="col-md-6">
+                <label class="mt-2">Sobrenome</label>
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+              </div><!-- Sobrenome -->
+              
+            </div><!-- Nome / Sobrenome -->
+
+            <!-- Email / Telefone -->
             <div class="form-group row">
-              <div class="col-6">
-                <label>Empresa</label>
-                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
-              </div>
-               <div class="col-6">
-                <label>Telefone</label>
-                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
-              </div>
-              
-            </div>
 
+              <!-- Email -->
+              <div class="col-md-6">
+                <label class="mt-2">Email</label>
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+              </div><!-- Email -->
+
+                <!-- Telefone -->
+               <div class="col-md-6">
+                <label class="mt-2">Telefone</label>
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+              </div><!-- Telefone -->
+              
+            </div><!-- Email / Telefone -->
+
+            <!-- Sobre mim -->
             <div class="form-group">
-              <label>Sobre</label>
+              <label>Sobre mim</label>
               <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
-            </div>
+            </div><!-- Sobre mim -->
 
-            <hr>
-
+            <hr class="my-5">
+            
             <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
               <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
             <% end %>
+            <label>Deixe em branco caso não queira alterar a senha
             
-            <div class="form-group">
+            <!-- Sobre mim -->
+            <div class="form-group mt-2">
               <label>Nova Senha
-                <span class="text-warning">(Leave it blank if you don't want to change it)</span>
                 <span class="text-muted">
                   <% if @minimum_password_length %>
                     <br />
-                    <em><%= @minimum_password_length %> caracteres mínimos</em>
+                    <em>Mínimo: <%= @minimum_password_length %> caracteres</em>
                   <% end %>
                 </span>
               </label>
-              <%= f.password_field :password, autocomplete: false, placeholder: 'New password', class: 'form-control', readonly: 'readonly', onfocus: "javascript: this.removeAttribute('readonly')" %>
-              
-            </div>
+              <%= f.password_field :password, autocomplete: false, placeholder: 'Nova senha', class: 'form-control', readonly: 'readonly', onfocus: "javascript: this.removeAttribute('readonly')" %>
+            </div><!-- Sobre mim -->
             
             <div class="form-group">
               <label>Confirmar nova senha</label>
-              <%= f.password_field :password_confirmation, autocomplete: false, placeholder: 'Confirm new password', class: 'form-control', readonly: 'readonly', onfocus: "javascript: this.removeAttribute('readonly')" %>
+              <%= f.password_field :password_confirmation, autocomplete: false, placeholder: 'Confirme nova senha', class: 'form-control', readonly: 'readonly', onfocus: "javascript: this.removeAttribute('readonly')" %>
             </div>
 
             <div class="form-group">
               <label>Senha Atual</label>
-              <%= f.password_field :current_password, autocomplete: false, placeholder: 'Confirm password actual', class: 'form-control', readonly: 'readonly', onfocus: "javascript: this.removeAttribute('readonly')" %>
+              <%= f.password_field :current_password, autocomplete: false, placeholder: 'Confirme senha atual', class: 'form-control', readonly: 'readonly', onfocus: "javascript: this.removeAttribute('readonly')" %>
             </div>
             
             <%= f.submit "Editar perfil", class: "mt-2 mb-2 btn btn-success" %>
-          <% end %>
+            
+          <% end %><!-- Formulário -->
+
         </div><!-- Card Body -->
 
       </div><!-- Card Shadow -->
 
     </div><!-- Profile Form -->
 
-  </div>
+  </div><!-- Profile Row -->
 
-</div>
+</div><!-- Profile Container -->

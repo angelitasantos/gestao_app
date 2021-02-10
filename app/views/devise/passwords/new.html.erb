@@ -1,22 +1,27 @@
-<div class="container form-user">
-  <div class="card o-hidden border-0 shadow-lg my-5 form-content">
-    <h3 class="text-center mt-2 mb-2">Esqueceu sua senha?</h3>
+<div class="container form-content">
 
+  <div class="card o-hidden border-0 shadow-lg my-5 form-user">
+    <h3 class="text-center mt-5 mb-5">Esqueceu sua senha?</h3>
+
+    <!-- Formulário -->
     <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
+      <!-- E-mail -->
       <div class="field mt-1">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
-      </div>
+        <%= f.email_field :email, placeholder: "Digite seu e-mail", autofocus: true, autocomplete: "email", class: "form-control" %>
+      </div><!-- E-mail -->
 
+      <!-- Botão -->
       <div class="actions">
-        <%= f.submit "Enviar instruções para recuperar senha", class: "mt-2 mb-2 btn btn-success btn-block" %>
-      </div>
-    <% end %>
+        <%= f.submit "Recuperar senha", class: "mt-2 mb-2 btn btn-success btn-block" %>
+      </div><!-- Botão -->
+
+    <% end %><!-- Formulário -->
 
     <%= link_to 'Entrar', new_user_session_path, class: "btn btn-light btn-block" %>
     <%= link_to 'Registrar', new_user_registration_path, class: "btn btn-light btn-block" %>
 
-  </div>
-</div>
+  </div><!-- Formulário User -->
+  
+</div><!-- Formulário Content -->
