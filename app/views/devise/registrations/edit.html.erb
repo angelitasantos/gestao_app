@@ -1,43 +1,107 @@
-<h3>Edit <%= resource_name.to_s.humanize %></h3>
+<div class="container">
+  <div class="row">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+    <!-- Profile Avatar -->
+    <div class="col-xl-4 col-lg-5">
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      <div class="card shadow mb-4">
+
+        <!-- Card Header - Dropdown -->
+        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+          <h6 class="m-0 font-weight-bold text-primary">Perfil</h6>
+        </div><!-- Card Header - Dropdown -->
+
+        <!-- Card Body -->
+        <div class="card-body">
+          <%= image_tag 'profile.png', class: 'mx-auto d-block img-thumbnail profile-round' %>     
+        </div><!-- Card Body -->
+
+      </div><!-- Card Body -->
+
+    </div><!-- Profile Shadow -->
+
+    <!-- Profile Form -->
+    <div class="col-xl-8 col-lg-7">
+
+      <div class="card shadow mb-4">
+
+        <!-- Card Header -->
+        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+          <h6 class="m-0 font-weight-bold text-primary">Editar informações</h6>
+        </div><!-- Card Header -->
+
+        <!-- Card Body -->
+        <div class="card-body">
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
+            
+            <div class="form-group row">
+              <div class="col-6">
+                <label>Nome</label>
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+              </div>
+              <div class="col-6">
+                <label>Email</label>
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+              </div>
+              
+            </div>
+
+            <div class="form-group row">
+              <div class="col-6">
+                <label>Empresa</label>
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+              </div>
+               <div class="col-6">
+                <label>Telefone</label>
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+              </div>
+              
+            </div>
+
+            <div class="form-group">
+              <label>Sobre</label>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+            </div>
+
+            <hr>
+
+            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+              <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+            <% end %>
+            
+            <div class="form-group">
+              <label>Nova Senha
+                <span class="text-warning">(Leave it blank if you don't want to change it)</span>
+                <span class="text-muted">
+                  <% if @minimum_password_length %>
+                    <br />
+                    <em><%= @minimum_password_length %> caracteres mínimos</em>
+                  <% end %>
+                </span>
+              </label>
+              <%= f.password_field :password, autocomplete: false, placeholder: 'New password', class: 'form-control', readonly: 'readonly', onfocus: "javascript: this.removeAttribute('readonly')" %>
+              
+            </div>
+            
+            <div class="form-group">
+              <label>Confirmar nova senha</label>
+              <%= f.password_field :password_confirmation, autocomplete: false, placeholder: 'Confirm new password', class: 'form-control', readonly: 'readonly', onfocus: "javascript: this.removeAttribute('readonly')" %>
+            </div>
+
+            <div class="form-group">
+              <label>Senha Atual</label>
+              <%= f.password_field :current_password, autocomplete: false, placeholder: 'Confirm password actual', class: 'form-control', readonly: 'readonly', onfocus: "javascript: this.removeAttribute('readonly')" %>
+            </div>
+            
+            <%= f.submit "Editar perfil", class: "mt-2 mb-2 btn btn-success" %>
+          <% end %>
+        </div><!-- Card Body -->
+
+      </div><!-- Card Shadow -->
+
+    </div><!-- Profile Form -->
+
   </div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+</div>
