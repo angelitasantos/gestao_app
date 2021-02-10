@@ -5,5 +5,6 @@ class AddExtraFieldsToUsers < ActiveRecord::Migration[6.1]
     add_column :users, :phone, :string
     add_column :users, :about, :text
     add_column :users, :status, :boolean, default: false
+    add_column :users, :image, :string
   end
 end

@@ -18,10 +18,13 @@
         </div><!-- Card Body -->
 
         <!-- Card Footer -->
-        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-          <h6 class="m-0">Upload Imagem</h6>
-        </div><!-- Card Footer -->
-
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+          <div class="form-group px-2">
+            <label>Upload Imagem</label>
+            <%= f.text_field  :image, autocomplete: "image", class: "form-control" %>
+          </div><!-- Card Footer -->
+        <% end %><!-- Formulário -->
       </div><!-- Card Shadow -->
 
     </div><!-- Profile Avatar -->
