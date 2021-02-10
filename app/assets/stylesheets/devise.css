@@ -12,6 +12,16 @@
     padding: 10px 50px;
 }
 
+.profile-round {
+    border-radius: 50%;
+    width: 200px;
+}
+
+.profile-round-small {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
 
 
 /* ----------------------------------------------------------------- */
