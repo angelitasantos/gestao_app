@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
   
   get '/dashboard', to: 'users#dashboard'
+  get '/financial', to: 'dashboards#financial'
+  get '/sales', to: 'dashboards#sales'
+  get '/registrations', to: 'dashboards#registrations'
+  get '/shopping', to: 'dashboards#shopping'
+  get '/supply', to: 'dashboards#supply'
+  get '/production', to: 'dashboards#production'
+  get '/reports', to: 'dashboards#reports'
+  get '/simulator', to: 'dashboards#simulator'
   post 'users/edit', to: 'users#update'
   
   root to: 'pages#home'

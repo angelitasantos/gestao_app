@@ -2,9 +2,9 @@
 /* ---------------------- Configuração Básica ---------------------- */
 /* ----------------------------------------------------------------- */
 
-
 .container-white {
     background: white;
+    margin-top: 70px;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -76,4 +76,105 @@ a:hover {
 li {
     list-style-type: none;
     padding: 5px;
+}
+
+.text-gray-100 {
+    color: #f8f9fc !important;
+}
+  
+.text-gray-200 {
+    color: #eaecf4 !important;
+}
+  
+.text-gray-300 {
+    color: #dddfeb !important;
+}
+  
+.text-gray-400 {
+    color: #d1d3e2 !important;
+}
+  
+.text-gray-500 {
+    color: #b7b9cc !important;
+}
+  
+.text-gray-600 {
+    color: #858796 !important;
+}
+  
+.text-gray-700 {
+    color: #6e707e !important;
+}
+  
+.text-gray-800 {
+    color: #5a5c69 !important;
+}
+  
+.text-gray-900 {
+    color: #3a3b45 !important;
+}
+  
+footer.sticky-footer {
+    padding: 2rem 0;
+    flex-shrink: 0;
+}
+
+footer.sticky-footer .copyright {
+    line-height: 1;
+    font-size: 0.8rem;
+}
+
+footer.sticky-footer {
+    width: 100%;
+}
+
+
+/* ------------------------ Page Wrapper --------------------------- */
+
+#wrapper {
+    display: flex;
+}
+  
+#wrapper #content-wrapper {
+    background-color: #f8f9fc;
+    width: 100%;
+    overflow-x: hidden;
+}
+  
+#wrapper #content-wrapper #content {
+    flex: 1 0 auto;
+}
+  
+
+/* --------------------------- Topbar ----------------------------- */
+
+.topbar {
+    height: 3rem;
+}
+
+.img-profile {
+    height: 2rem;
+    width: 2rem;
+}
+
+
+
+/* ----------------------------------------------------------------- */
+/* ----------------------- Design Responsivo ----------------------- */
+/* ----------------------------------------------------------------- */
+
+@media screen and (max-width: 576px) {
+
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 2.2rem;
+    }
+    
+    h3 {
+        font-size: 1.9rem;
+    }
+
 }

@@ -1,2 +1,10 @@
-<h1>Users#dashboard</h1>
-<p>Find me in app/views/users/dashboard.html.erb</p>
+<div class="dashboard">
+    <div class="row">
+        <div class="col-2">
+            <%= render 'shared/sidebar' %>
+        </div>
+        <div class="container-dashboard col-10">
+            <%= render 'dashboard/dashboard' %>
+        </div>
+    </div>
+</div>

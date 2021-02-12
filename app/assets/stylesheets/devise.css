@@ -2,13 +2,13 @@
 /* ----------------------------- User ------------------------------ */
 /* ----------------------------------------------------------------- */
 
-.form-content{
+.form-content {
     width: 600px;
     border-radius: 5%;
 }
 
 
-.form-user{
+.form-user {
     padding: 10px 50px;
 }
 
@@ -24,35 +24,35 @@
 }
 
 
+
 /* ----------------------------------------------------------------- */
 /* ----------------------- Design Responsivo ----------------------- */
 /* ----------------------------------------------------------------- */
 
 @media screen and (max-width: 576px) {
 
-    .form-content{
+    .form-content {
         width: 400px;
         border-radius: 5%;
     }
     
     
-    .form-user{
+    .form-user {
         padding: 10px 20px;
     }
 
 }
 
 
-
 @media screen and (max-width: 400px) {
 
-    .form-content{
+    .form-content {
         width: 280px;
         border-radius: 5%;
     }
     
     
-    .form-user{
+    .form-user {
         padding: 10px 10px;
     }
 

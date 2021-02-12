@@ -2,20 +2,28 @@
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-        <div class="sidebar-brand-icon rotate-n-15">
+        <div class="sidebar-brand-icon">
             <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text h4 mx-3">Gestão APP <sup>1</sup></div>
+        <div class="sidebar-brand-text h4 mx-3">Gestão APP<sup></sup></div>
     </a>
 
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
 
     <!-- Nav Item - Dashboard -->
-    <li class="nav-item active">
-        <a class="nav-link" href="index.html">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
+    <li class="nav-item">
+        <a class="nav-link" href="dashboard">
+            <i class="fas fa-solar-panel fa-md fa-fw mr-2 text-gray-900"></i>
             <span>Dashboard</span>
+        </a>
+    </li>
+
+    <!-- Nav Item - Simulator -->
+    <li class="nav-item ">
+        <a class="nav-link" href="simulator">
+            <i class="fas fa-calculator fa-md fa-fw mr-2 text-gray-900"></i>
+            <span>Simulador</span>
         </a>
     </li>
 
@@ -27,97 +35,143 @@
         Painel Gestão
     </div>
 
-    <!-- Nav Item - Pages Collapse Menu -->
+    <!-- Nav Item - Financial -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse01"
             aria-expanded="true" aria-controls="collapseTwo">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Simulador</span>
+            <i class="fas fa-cash-register fa-md fa-fw mr-2 text-gray-900"></i>
+            <span>Financeiro</span>
         </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div id="collapse01" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Simulador:</h6>
-                <a class="collapse-item" href="simulador">Margem</a>
-                <a class="collapse-item" href="simulador">Planejamento</a>
+                <a class="collapse-item" href="financial">Caixa e Bancos</a>
+                <a class="collapse-item" href="financial">Recebimentos</a>
+                <a class="collapse-item" href="financial">Pagamentos</a>
             </div>
         </div>
-    </li>
+    </li><!-- Nav Item - Financial -->
 
-    <!-- Nav Item - Utilities Collapse Menu -->
+    <!-- Nav Item - Sales -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-            aria-expanded="true" aria-controls="collapseUtilities">
-            <i class="fas fa-fw fa-wrench"></i>
-            <span>Operacional</span>
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse02"
+            aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-cart-arrow-down fa-md fa-fw mr-2 text-gray-900"></i>
+            <span>Vendas</span>
         </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-            data-parent="#accordionSidebar">
+        <div id="collapse02" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Operacional:</h6>
-                <a class="collapse-item" href="vendas">Vendas</a>
-                <a class="collapse-item" href="compras">Compras</a>
-                <a class="collapse-item" href="estoque">Estoque</a>
-                <a class="collapse-item" href="producao">Produção</a>
+                <a class="collapse-item" href="sales">Pedidos</a>
+                <a class="collapse-item" href="sales">Comissões</a>
+                <a class="collapse-item" href="sales">Devoluções</a>
             </div>
         </div>
+    </li><!-- Nav Item - Sales -->
+
+    <!-- Nav Item - Registrations -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse03"
+            aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-list fa-md fa-fw mr-2 text-gray-900"></i>
+            <span>Cadastros</span>
+        </a>
+        <div id="collapse03" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="registrations">Produtos e Serviços</a>
+                <a class="collapse-item" href="registrations">Clientes</a>
+                <a class="collapse-item" href="registrations">Fornecedores</a>
+            </div>
+        </div>
+    </li><!-- Nav Item - Registrations -->
+
+    <!-- Nav Item - Shopping -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse04"
+            aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-archive fa-md fa-fw mr-2 text-gray-900"></i>
+            <span>Compras</span>
+        </a>
+        <div id="collapse04" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="shopping">Pedidos</a>
+                <a class="collapse-item" href="shopping">Compras em aberto</a>
+                <a class="collapse-item" href="shopping">Devoluções</a>
+            </div>
+        </div>
+    </li><!-- Nav Item - Shopping -->
+
+    <!-- Nav Item - Supply -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse05"
+            aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-clipboard fa-md fa-fw mr-2 text-gray-900"></i>
+            <span>Estoque</span>
+        </a>
+        <div id="collapse05" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="supply">Armazenamento</a>
+                <a class="collapse-item" href="supply">Separação</a>
+                <a class="collapse-item" href="supply">Entregas</a>
+            </div>
+        </div>
+    </li><!-- Nav Item - Supply -->
+
+    <!-- Nav Item - Production -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse06"
+            aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-industry fa-md fa-fw mr-2 text-gray-900"></i>
+            <span>Produção</span>
+        </a>
+        <div id="collapse06" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="production">Planejamento</a>
+                <a class="collapse-item" href="production">Manutenção</a>
+                <a class="collapse-item" href="production">Controle de Qualidade</a>
+            </div>
+        </div>
+    </li><!-- Nav Item - Production -->
+
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
+
+    <!-- Nav Item - Reports -->
+    <li class="nav-item">
+        <a class="nav-link" href="reports">
+            <i class="fas fa-chart-line fa-md fa-fw mr-2 text-gray-900"></i>
+            <span>Relatórios</span>
+        </a>
     </li>
 
     <!-- Divider -->
     <hr class="sidebar-divider">
 
-    <!-- Heading -->
-    <div class="sidebar-heading">
-        Addons
-    </div>
+    <!-- Divider -->
+    <hr class="sidebar-divider">
 
-    <!-- Nav Item - Pages Collapse Menu -->
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
+
+    <!-- Nav Item - Reports -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-            aria-expanded="true" aria-controls="collapsePages">
-            <i class="fas fa-fw fa-folder"></i>
-            <span>Configurações</span>
+        <a class="nav-link" href="reports">
+            <i class="fas fa-phone-volume fa-md fa-fw mr-2 text-gray-900"></i>
+            <span>Suporte</span>
         </a>
-        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Entrar / Registrar:</h6>
-                <a class="collapse-item" href="users/sign_in">Entrar</a>
-                <a class="collapse-item" href="users/sign_up">Registrar</a>
-                <a class="collapse-item" href="users/password/new">Esqueceu a senha</a>
-                <div class="collapse-divider"></div>
-                <h6 class="collapse-header">Configurações:</h6>
-                <a class="collapse-item" href="painelconfig">Painel</a>
-                <a class="collapse-item" href="siteconfig">Site</a>
+        <div class="row">
+            <div class="col-md-6 px-5">
+                <a href="https://api.whatsapp.com/message/OXVJNATOPP7QK1" target="_blank"><i class="fab fa-whatsapp-square fa-3x"></i></a>
             </div>
-        </div>
-    </li>
 
-    <!-- Nav Item - Charts -->
-    <li class="nav-item">
-        <a class="nav-link" href="contato">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Suporte</span></a>
-    </li>
-
-    <!-- Nav Item - Tables -->
-    <li class="nav-item">
-        <a class="nav-link" href="home">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Site</span></a>
+            <div class="col-md-4 px-5">
+                <a href="https://t.me/sanlisgestao/" target="_blank"><i class="fab fa-telegram fa-3x"></i></a>
+            </div>
+        </div><!-- Redes Sociais 1 -->
     </li>
 
     <!-- Divider -->
-    <hr class="sidebar-divider d-none d-md-block">
+    <hr class="sidebar-divider">
 
-    <!-- Sidebar Toggler (Sidebar) -->
-    <div class="text-center d-none d-md-inline">
-        <button class="rounded-circle border-0" id="sidebarToggle"></button>
-    </div>
-
-    <!-- Sidebar Message -->
-    <div class="sidebar-card">
-        <img class="sidebar-card-illustration mb-2" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="">
-        <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
-        <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
-    </div>
+    <!-- Divider -->
+    <hr class="sidebar-divider">
 
 </ul>

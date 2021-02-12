@@ -1,0 +1,25 @@
+<!-- Financial -->
+<div class="tab-pane fade show" id="v-pills-dashboard" role="tabpanel" aria-labelledby="v-pills-dashboard-tab">
+    <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="pills-dashboard-tab-01" data-toggle="pill" href="#pills-dashboard-01" role="tab" aria-controls="pills-dashboard-01" aria-selected="false">Armazenamento</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="pills-dashboard-tab-02" data-toggle="pill" href="#pills-dashboard-02" role="tab" aria-controls="pills-dashboard-02" aria-selected="false">Separações</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="pills-dashboard-tab-03" data-toggle="pill" href="#pills-dashboard-03" role="tab" aria-controls="pills-dashboard-03" aria-selected="false">Entregas</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-dashboard-01" role="tabpanel" aria-labelledby="pills-dashboard-tab-01">
+            <%= render 'dashboard/supply/storage' %>
+        </div>
+        <div class="tab-pane fade" id="pills-dashboard-02" role="tabpanel" aria-labelledby="pills-dashboard-tab-02">
+            <%= render 'dashboard/supply/deliveries' %>
+        </div>
+        <div class="tab-pane fade" id="pills-dashboard-03" role="tabpanel" aria-labelledby="pills-dashboard-tab-03">
+            <%= render 'dashboard/supply/separation' %>
+        </div>
+    </div>
+</div><!-- Financial -->
