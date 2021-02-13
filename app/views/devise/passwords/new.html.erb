@@ -1,28 +1,26 @@
-<div class="container container-white form-content">
+<div class="col-md-6">
+  <h2>Imagem</h2>
+</div>
 
-  <div class="card o-hidden border-0 shadow-lg my-5 form-user">
-  
-    <h3 class="text-center mt-5 mb-5">Esqueceu sua senha?</h3>
+<div class="col-md-6">
 
-    <!-- Formulário -->
-    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
+  <h2 class="text-center pb-3">Esqueceu sua senha?</h2>
 
-      <!-- E-mail -->
-      <div class="field mt-1">
-        <%= f.email_field :email, placeholder: "Digite seu e-mail", autofocus: true, autocomplete: "email", class: "form-control" %>
-      </div><!-- E-mail -->
+  <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <%= f.error_notification %>
 
-      <!-- Botão -->
-      <div class="actions">
-        <%= f.submit "Recuperar senha", class: "mt-2 mb-2 btn btn-success btn-block" %>
-      </div><!-- Botão -->
+    <div class="form-inputs">
+      <%= f.input :email,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "email" } %>
+    </div>
 
-    <% end %><!-- Formulário -->
+    <div class="form-actions">
+      <%= f.button :submit, "Enviar instruções", class:"btn btn-secondary btn-block mb-3" %>
+    </div>
+  <% end %>
 
-    <%= link_to 'Entrar', new_user_session_path, class: "btn btn-light btn-block" %>
-    <%= link_to 'Registrar', new_user_registration_path, class: "btn btn-light btn-block" %>
+  <%= render "devise/shared/links" %>
 
-  </div><!-- Formulário User -->
-  
-</div><!-- Formulário Content -->
+</div>

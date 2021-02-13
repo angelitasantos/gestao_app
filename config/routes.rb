@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :categories
+  resources :books
   get '/dashboard', to: 'users#dashboard'
   get '/financial', to: 'dashboards#financial'
   get '/sales', to: 'dashboards#sales'

@@ -17,7 +17,7 @@ pt-BR:
         locked_at: Bloqueado em
         fullname: Nome
         password: Senha
-        password_confirmation: Campo Confirme senha
+        password_confirmation: Confirme senha
         remember_created_at: Lembrente criado em
         remember_me: Lembrar de mim
         reset_password_sent_at: Resetar senha enviado em

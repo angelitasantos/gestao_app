@@ -1,62 +1,34 @@
-<div class="container form-content">
+<div class="col-md-6">
+  <h2>Imagem</h2>
+</div>
 
-  <div class="card o-hidden border-0 shadow-lg my-5 form-user">
-  
-    <h3 class="text-center mt-5 mb-5">Registrar</h3>
+<div class="col-md-6">
 
-    <!-- Formulário -->
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
-      
-      <!-- Nome -->
-      <div class="field mt-1">
-        <%= f.text_field :fullname, autofocus: true, placeholder: "Digite seu nome", autocomplete: "fullname", class: "form-control" %>
-      </div><!-- Nome -->
+  <h2 class="text-center pb-3">Registrar</h2>
 
-      <!-- E-mail -->
-      <div class="field mt-1">
-        <%= f.email_field :email, placeholder: "Digite um e-mail válido", autocomplete: "email", class: "form-control" %>
-      </div><!-- E-mail -->
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= f.error_notification %>
 
-      <!-- Senha -->
-      <div class="row">
-          <!-- Senha -->
-          <div class="col-md-6 field mt-1">
-            <% if @minimum_password_length %>
-              <em>(Mínimo: <%= @minimum_password_length %> caracteres)</em>
-            <% end %><br />
-            <%= f.password_field :password, placeholder: "Digite uma senha válida", autocomplete: "new-password", class: "form-control" %>
-          </div><!-- Senha -->
+    <div class="form-inputs">
+      <%= f.input :email,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "email" }%>
+      <%= f.input :password,
+                  required: true,
+                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                  input_html: { autocomplete: "new-password" } %>
+      <%= f.input :password_confirmation,
+                  required: true,
+                  input_html: { autocomplete: "new-password" } %>
+    </div>
 
-          <!-- Confirmar senha -->
-          <div class="col-md-6 field mt-1">
-            <label></label>
-            <%= f.password_field :password_confirmation, placeholder: "Confirme sua senha", autocomplete: "new-password", class: "form-control" %>
-          </div><!-- Confirmar senha -->
-        
-      </div><!-- Senha -->
+    <div class="form-actions">
+      <%= f.button :submit, "Registrar", class:"btn btn-secondary btn-block mb-3" %>
+    </div>
 
-      <!-- Empresa -->
-      <label class="mt-2"><span>Opcional</span></label>
-      <div>
-        <%= f.text_field :organization, placeholder: "Digite sua empresa", autocomplete: "organization", class: "form-control" %>
-      </div><!-- Empresa -->
+  <% end %>
 
-      <!-- Telefone -->
-      <div class="field mt-1">
-        <%= f.text_field :phone, placeholder: "Digite seu telefone", autocomplete: "phone", class: "form-control" %>
-      </div><!-- Telefone -->
+  <%= render "devise/shared/links" %>
 
-      <!-- Botão -->
-      <div class="actions">
-        <%= f.submit "Registrar", class: "mt-2 mb-2 btn btn-success btn-block" %>
-      </div><!-- Botão -->
-
-    <% end %><!-- Formulário -->
-
-    <%= link_to 'Entrar', new_user_session_path, class: "btn btn-light btn-block" %>
-    <%= link_to 'Esqueceu sua senha', new_user_password_path, class: "btn btn-light btn-block" %>
-
-  </div><!-- Formulário User -->
-
-</div><!-- Formulário Content -->
+</div>

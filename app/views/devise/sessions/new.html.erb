@@ -1,40 +1,28 @@
-<div class="container form-content">
+<div class="col-md-6">
+  <h2>Imagem</h2>
+</div>
 
-  <div class="card o-hidden border-0 shadow-lg my-5 form-user">
+<div class="col-md-6">
   
-    <h3 class="text-center mt-5 mb-5">Entrar</h3>
-
-    <!-- Formulário -->
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-
-      <!-- E-mail -->
-      <div class="field mt-1">
-        <%= f.email_field :email, placeholder: "Digite seu e-mail", autofocus: true, autocomplete: "email", class: "form-control" %>
-      </div><!-- E-mail -->
-
-      <!-- Senha -->
-      <div class="field mt-1">
-        <%= f.password_field :password, placeholder: "Digite sua senha", autocomplete: "current-password", class: "form-control" %>
-      </div><!-- Senha -->
-
-      <!-- Senha -->
-      <% if devise_mapping.rememberable? %>
-        <div class="field mt-2 text-right">
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me %>
-        </div>
-      <% end %>
-
-      <!-- Botão -->
-      <div class="actions">
-        <%= f.submit "Entrar", class: "mt-2 mb-2 btn btn-success btn-block" %>
-      </div><!-- Botão -->
-
-    <% end %><!-- Formulário -->
-
-    <%= link_to 'Registrar', new_user_registration_path, class: "btn btn-light btn-block" %>
-    <%= link_to 'Esqueceu sua senha', new_user_password_path, class: "btn btn-light btn-block" %>
+  <h2 class="text-center pb-3">Entrar</h2>
   
-  </div><!-- Formulário User -->
+  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="form-inputs">
+      <%= f.input :email,
+                  required: false,
+                  autofocus: true,
+                  input_html: { autocomplete: "email" } %>
+      <%= f.input :password,
+                  required: false,
+                  input_html: { autocomplete: "current-password" } %>
+      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+    </div>
 
-</div><!-- Formulário Content -->
+    <div class="form-actions">
+      <%= f.button :submit, "Entrar", class:"btn btn-secondary btn-block mb-3" %>
+    </div>
+  <% end %><!-- Formulário -->
+
+  <%= render "devise/shared/links" %>
+
+</div>

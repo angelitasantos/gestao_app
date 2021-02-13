@@ -1,37 +1,36 @@
-<div class="container form-content">
+<div class="col-md-6">
+  <h2>Imagem</h2>
+</div>
 
-  <div class="card o-hidden border-0 shadow-lg my-5 form-user">
+<div class="col-md-6">
 
-    <h3 class="text-center mt-5 mb-5">Mudar sua senha</h3>
+  <h2 class="text-center pb-3">Alterar sua senha</h2>
 
-    <!-- Formulário -->
-    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
-      <%= f.hidden_field :reset_password_token %>
+  <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+    <%= f.error_notification %>
 
-      <!-- Senha -->
-      <div class="field mt-1">
-        <% if @minimum_password_length %>
-          <em>Mínimo: (<%= @minimum_password_length %> caracteres)</em><br />
-        <% end %>
-        <%= f.password_field :password, placeholder: "Digite uma senha válida", autofocus: true, autocomplete: "new-password", class: "form-control" %>
-      </div><!-- Senha -->
+    <%= f.input :reset_password_token, as: :hidden %>
+    <%= f.full_error :reset_password_token %>
 
-      <!-- Confirmar senha -->
-      <div class="field mt-1">
-        <%= f.password_field :password_confirmation, placeholder: "Confirme a senha", autocomplete: "new-password", class: "form-control" %>
-      </div><!-- Confirmar senha -->
+    <div class="form-inputs">
+      <%= f.input :password,
+                  label: "New password",
+                  required: true,
+                  autofocus: true,
+                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                  input_html: { autocomplete: "new-password" } %>
+      <%= f.input :password_confirmation,
+                  label: "Confirm your new password",
+                  required: true,
+                  input_html: { autocomplete: "new-password" } %>
+    </div>
 
-      <!-- Botão -->
-      <div class="actions">
-        <%= f.submit "Mudar minha senha", class: "mt-2 mb-2 btn btn-success btn-block" %>
-      </div><!-- Botão -->
+    <div class="form-actions">
+      <%= f.button :submit, "Alterar", class:"btn btn-secondary btn-block mb-3" %>
+    </div>
 
-    <% end %><!-- Formulário -->
+  <% end %>
 
-    <%= link_to 'Entrar', new_user_session_path, class: "btn btn-light btn-block" %>
-    <%= link_to 'Esqueceu sua senha', new_user_password_path, class: "btn btn-light btn-block" %>
+  <%= render "devise/shared/links" %>
 
-  </div><!-- Formulário User -->
-
-</div><!-- Formulário Content -->
+</div>
