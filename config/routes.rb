@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get '/production', to: 'dashboards#production'
   get '/reports', to: 'dashboards#reports'
   get '/simulator', to: 'dashboards#simulator'
-  
+
   root to: 'pages#home'
   devise_for :users, path: '', path_names: { sign_in: 'entrar', sign_up: 'registrar', sign_out: 'sair', edit: 'perfil' }
 

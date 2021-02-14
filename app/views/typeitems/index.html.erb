@@ -1,41 +1,53 @@
-<div class="container">
+<div class="dashboard">
 
-    <div class="container-devise devise">
+    <div class="row">
 
-        <p id="notice"><%= notice %></p>
+        <div class="col-2">
+            <%= render 'shared/sidebar' %>
+        </div>
 
-        <table class="table table-hover">
+        <div class="container-dashboard col-10">
 
-            <h1 class="mb-5">Tipo de Itens</h1>
+            <div class="container-devise mx-5 my-5">
 
-            <thead class="thead-dark">
-                <tr>
-                    <th>id</th>
-                    <th>Descrição</th>
-                    <th class="text-center">Mostrar</th>
-                    <th class="text-center">Editar</th>
-                    <th class="text-center">Deletar</th>
-                </tr>
-            </thead>
+                <p id="notice"><%= notice %></p>
 
-            <tbody>
-                <% @typeitems.each do |typeitem| %>
-                <tr>
-                    <td><%= typeitem.id %></td>
-                    <td><%= typeitem.name %></td>
-                    <td class="text-center"><%= link_to '', typeitem, class:"fas fa-eye fa-lg bg-light" %></td>
-                    <td class="text-center"><%= link_to '', edit_typeitem_path(typeitem), class:"fas fa-edit fa-lg bg-light" %></td>
-                    <td class="text-center"><%= link_to '', typeitem, method: :delete, data: { confirm: 'Você tem certeza que deseja excluir esse registro?' }, class:"fas fa-trash fa-lg bg-light" %></td>
-                </tr>
-                <% end %>
-            </tbody>
-        </table>
+                <table class="table table-hover">
 
-        <br>
+                    <h1 class="mb-5">Tipo de Itens</h1>
 
-        <%= link_to 'Novo', new_typeitem_path, class:"btn btn-secondary mr-3" %>
-        <%= link_to 'Voltar', dashboard_path, class:"btn btn-secondary" %>
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>id</th>
+                            <th>Descrição</th>
+                            <th class="text-center">Mostrar</th>
+                            <th class="text-center">Editar</th>
+                            <th class="text-center">Deletar</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <% @typeitems.each do |typeitem| %>
+                        <tr>
+                            <td><%= typeitem.id %></td>
+                            <td><%= typeitem.name %></td>
+                            <td class="text-center"><%= link_to '', typeitem, class:"fas fa-eye fa-lg bg-light" %></td>
+                            <td class="text-center"><%= link_to '', edit_typeitem_path(typeitem), class:"fas fa-edit fa-lg bg-light" %></td>
+                            <td class="text-center"><%= link_to '', typeitem, method: :delete, data: { confirm: 'Você tem certeza que deseja excluir esse registro?' }, class:"fas fa-trash fa-lg bg-light" %></td>
+                        </tr>
+                        <% end %>
+                    </tbody>
+                </table>
+
+                <br>
+
+                <%= link_to 'Novo', new_typeitem_path, class:"btn btn-secondary mr-3" %>
+                <%= link_to 'Voltar', dashboard_path, class:"btn btn-secondary" %>
+
+            </div>
+            
+        </div>
 
     </div>
-    
+
 </div>

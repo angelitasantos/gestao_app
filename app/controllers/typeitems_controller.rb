@@ -1,5 +1,5 @@
 class TypeitemsController < ApplicationController
-    before_action :set_typeitem, only: [:show, :edit, :update]
+    before_action :set_typeitem, only: [:show, :edit, :update, :destroy]
 
     def index
         @typeitems = Typeitem.all
@@ -16,17 +16,41 @@ class TypeitemsController < ApplicationController
     end
     
     def create
+
         @typeitem = Typeitem.new(typeitem_params)
+
         if @typeitem.save
+            flash[:notice] = "Saved successfully"
             redirect_to typeitem_path(@typeitem)
         else
+            flash[:alert] = "Opps something went wrong! Did not update."
             render :new
         end
+
     end
 
     def update
-        @typeitem.update(typeitem_params)
-        redirect_to typeitem_path(@typeitem)
+
+        if @typeitem.update(typeitem_params)
+            flash[:notice] = "Saved successfully"
+            redirect_to typeitem_path(@typeitem)
+        else
+            flash[:alert] = "Opps something went wrong! Did not update."
+            render :new
+        end
+
+    end
+
+    def destroy
+
+        if @typeitem.destroy(typeitem_params)
+            flash[:notice] = "Saved successfully"
+            redirect_to typeitem_path(@typeitem)
+        else
+            flash[:alert] = "Opps something went wrong! Did not update."
+            render :new
+        end
+        
     end
 
     private

@@ -1,29 +1,54 @@
-<p id="notice"><%= notice %></p>
+<div class="dashboard">
 
-<h1>Categories</h1>
+    <div class="row">
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+        <div class="col-2">
+            <%= render 'shared/sidebar' %>
+        </div>
 
-  <tbody>
-    <% @categories.each do |category| %>
-      <tr>
-        <td><%= category.name %></td>
-        <td><%= category.user_id %></td>
-        <td><%= link_to 'Show', category %></td>
-        <td><%= link_to 'Edit', edit_category_path(category) %></td>
-        <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <div class="container-dashboard col-10">
+        
+           <div class="container-devise mx-5 my-5">
 
-<br>
+            <p id="notice"><%= notice %></p>
 
-<%= link_to 'New Category', new_category_path %>
+            <table class="table table-hover">
+
+              <h1 class="mb-5">Categorias</h1>
+
+              <thead class="thead-dark">
+                <tr>
+                  <th>User</th>
+                  <th>Descrição</th>
+                  <th class="text-center">Mostrar</th>
+                  <th class="text-center">Editar</th>
+                  <th class="text-center">Deletar</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <% @categories.each do |category| %>
+                <tr>
+                  <td><%= category.user_id %></td>
+                  <td><%= category.name %></td>
+                  <td class="text-center"><%= link_to '', category, class:"fas fa-eye fa-lg bg-light" %></td>
+                  <td class="text-center"><%= link_to '', edit_category_path(category), class:"fas fa-edit fa-lg bg-light" %></td>
+                  <td class="text-center"><%= link_to '', category, method: :delete, data: { confirm: 'Você tem certeza que deseja excluir esse registro?' }, class:"fas fa-trash fa-lg bg-light" %></td>
+                </tr>
+                <% end %>
+              </tbody>
+
+            </table>
+
+            <br>
+
+            <%= link_to 'Novo', new_category_path, class:"btn btn-secondary mr-3" %>
+            <%= link_to 'Voltar', registrations_path, class:"btn btn-secondary" %>
+
+          </div>
+
+        </div>
+
+    </div>
+
+</div>

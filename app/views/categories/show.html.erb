@@ -1,14 +1,32 @@
-<p id="notice"><%= notice %></p>
+<div class="dashboard">
 
-<p>
-  <strong>Name:</strong>
-  <%= @category.name %>
-</p>
+    <div class="row">
 
-<p>
-  <strong>User:</strong>
-  <%= @category.user_id %>
-</p>
+        <div class="col-2">
+            <%= render 'shared/sidebar' %>
+        </div>
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+        <div class="container-dashboard col-10">
+
+            <div class="container-devise mx-5 my-5">
+
+                <h1 class="mb-5">Cadastro</h1>
+
+                <p> <strong>User:</strong>
+                    <%= @category.user_id %>
+                </p>
+
+                <p class="mb-5"> <strong>Name:</strong>
+                    <%= @category.name %>
+                </p>
+
+                <%= link_to 'Editar', edit_category_path(@category), class:"btn btn-secondary mr-3" %>
+                <%= link_to 'Voltar', categories_path, class:"btn btn-secondary" %>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
