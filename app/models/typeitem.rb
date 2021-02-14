@@ -1,0 +1,2 @@
+class Typeitem < ApplicationRecord
+end

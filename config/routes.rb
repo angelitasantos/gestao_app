@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
   resources :categories
   resources :books
+
   get '/dashboard', to: 'users#dashboard'
   get '/financial', to: 'dashboards#financial'
   get '/sales', to: 'dashboards#sales'
@@ -11,10 +12,12 @@ Rails.application.routes.draw do
   get '/production', to: 'dashboards#production'
   get '/reports', to: 'dashboards#reports'
   get '/simulator', to: 'dashboards#simulator'
-  post 'users/edit', to: 'users#update'
   
   root to: 'pages#home'
   devise_for :users, path: '', path_names: { sign_in: 'entrar', sign_up: 'registrar', sign_out: 'sair', edit: 'perfil' }
+
+  resources :typeitems, only: [:index, :show, :new, :edit]
+  resources :typeitems, only: [:create, :update, :delete]
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
