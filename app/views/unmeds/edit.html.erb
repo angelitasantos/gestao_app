@@ -1,0 +1,26 @@
+<div class="dashboard">
+
+    <div class="row">
+
+        <div class="col-2">
+            <%= render 'shared/sidebar' %>
+        </div>
+
+        <div class="container-dashboard col-10">
+
+            <div class="container-devise mx-5 my-5">
+
+                <h1 class="mb-5">Editar Unidade de Medida</h1>
+
+                <%= render 'form', unmed: @unmed %>
+
+                <%= link_to 'Mostrar', @unmed, class:"btn btn-secondary mr-3" %> 
+                <%= link_to 'Voltar', unmeds_path, class:"btn btn-secondary" %>
+
+            </div>
+            
+        </div>
+
+    </div>
+
+</div>

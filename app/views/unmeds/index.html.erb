@@ -1,0 +1,53 @@
+<div class="dashboard">
+
+    <div class="row">
+
+        <div class="col-2">
+            <%= render 'shared/sidebar' %>
+        </div>
+
+        <div class="container-dashboard col-10">
+
+            <div class="container-devise mx-5 my-5">
+
+                <p id="notice"><%= notice %></p>
+
+                <table class="table table-hover">
+
+                    <h1 class="mb-5">Unidades de medida</h1>
+
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Abreviação</th>
+                            <th>Descrição</th>
+                            <th class="text-center">Mostrar</th>
+                            <th class="text-center">Editar</th>
+                            <th class="text-center">Deletar</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <% @unmeds.each do |unmed| %>
+                        <tr>
+                            <td><%= unmed.abreviacao %></td>
+                            <td><%= unmed.descricao %></td>
+                            <td class="text-center"><%= link_to '', unmed, class:"fas fa-eye fa-lg bg-light" %></td>
+                            <td class="text-center"><%= link_to '', edit_unmed_path(unmed), class:"fas fa-edit fa-lg bg-light" %></td>
+                            <td class="text-center"><%= link_to '', unmed, method: :delete, data: { confirm: 'Você tem certeza que deseja excluir esse registro?' }, class:"fas fa-trash fa-lg bg-light" %></td>
+                        </tr>
+                        <% end %>
+                    </tbody>
+                </table>
+
+                <br>
+
+                <%= link_to 'Novo', new_unmed_path, class:"btn btn-secondary mr-3" %>
+                <%= link_to 'Voltar', dashboard_path, class:"btn btn-secondary" %>
+
+            </div>
+            
+        </div>
+
+    </div>
+
+</div>

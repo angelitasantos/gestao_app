@@ -1,0 +1,37 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  descricao: MyString
+  tipo: 1
+  typeitem_id: 1
+  category_id: 1
+  unmed_id: 1
+  ncm_id: 1
+  estseg: 1.5
+  leadtime: 1.5
+  altura: 1.5
+  comprimento: 1.5
+  largura: 1.5
+  pesobruto: 1.5
+  pesoliquido: 1.5
+  lastro: 1.5
+  camada: 1.5
+  user: one
+
+two:
+  descricao: MyString
+  tipo: 1
+  typeitem_id: 1
+  category_id: 1
+  unmed_id: 1
+  ncm_id: 1
+  estseg: 1.5
+  leadtime: 1.5
+  altura: 1.5
+  comprimento: 1.5
+  largura: 1.5
+  pesobruto: 1.5
+  pesoliquido: 1.5
+  lastro: 1.5
+  camada: 1.5
+  user: two

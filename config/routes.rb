@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
-  
+
+  resources :typeitems
+  resources :unmeds
+
   resources :categories
+  resources :ncms
   resources :books
+  resources :items
 
   get '/dashboard', to: 'users#dashboard'
   get '/financial', to: 'dashboards#financial'
@@ -15,9 +20,6 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
   devise_for :users, path: '', path_names: { sign_in: 'entrar', sign_up: 'registrar', sign_out: 'sair', edit: 'perfil' }
-
-  resources :typeitems, only: [:index, :show, :new, :edit]
-  resources :typeitems, only: [:create, :update, :delete]
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

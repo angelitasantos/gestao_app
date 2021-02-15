@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_13_233828) do
+ActiveRecord::Schema.define(version: 2021_02_14_150959) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,8 +70,50 @@ ActiveRecord::Schema.define(version: 2021_02_13_233828) do
     t.index ["user_id"], name: "index_categories_on_user_id"
   end
 
+  create_table "items", force: :cascade do |t|
+    t.string "descricao"
+    t.integer "tipo"
+    t.integer "typeitem_id"
+    t.integer "category_id"
+    t.integer "unmed_id"
+    t.integer "ncm_id"
+    t.float "estseg"
+    t.float "leadtime"
+    t.float "altura"
+    t.float "comprimento"
+    t.float "largura"
+    t.float "pesobruto"
+    t.float "pesoliquido"
+    t.float "lastro"
+    t.float "camada"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_items_on_user_id"
+  end
+
+  create_table "ncms", force: :cascade do |t|
+    t.string "codigo"
+    t.string "descricao"
+    t.integer "tipoicm"
+    t.float "percicm"
+    t.float "percipi"
+    t.float "percst"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_ncms_on_user_id"
+  end
+
   create_table "typeitems", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "unmeds", force: :cascade do |t|
+    t.string "abreviacao"
+    t.string "descricao"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -98,4 +140,6 @@ ActiveRecord::Schema.define(version: 2021_02_13_233828) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "books", "users"
   add_foreign_key "categories", "users"
+  add_foreign_key "items", "users"
+  add_foreign_key "ncms", "users"
 end

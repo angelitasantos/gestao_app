@@ -1,16 +1,16 @@
-class TypeitemsController < ApplicationController
+class UnmedsController < ApplicationController
     before_action :authenticate_user!
-    before_action :set_typeitem, only: [:show, :edit, :update, :destroy]
+    before_action :set_unmed, only: [:show, :edit, :update, :destroy]
 
     def index
-        @typeitems = Typeitem.all.order(:id)
+        @unmeds = Unmed.all.order(:descricao)
     end
 
     def show 
     end
 
     def new
-        @typeitem = Typeitem.new
+        @unmed = Unmed.new
     end
 
     def edit
@@ -18,11 +18,11 @@ class TypeitemsController < ApplicationController
     
     def create
 
-        @typeitem = Typeitem.new(typeitem_params)
+        @unmed = Unmed.new(unmed_params)
 
-        if @typeitem.save
+        if @unmed.save
             flash[:notice] = "Cadastro efetuado com sucesso."
-            redirect_to typeitem_path(@typeitem)
+            redirect_to unmed_path(@unmed)
         else
             flash[:alert] = "Algo deu errado. Não foi possível efetuar o cadastro."
             render :new
@@ -32,9 +32,9 @@ class TypeitemsController < ApplicationController
 
     def update
 
-        if @typeitem.update(typeitem_params)
+        if @unmed.update(unmed_params)
             flash[:notice] = "Cadastro atualizado com sucesso."
-            redirect_to typeitem_path(@typeitem)
+            redirect_to unmed_path(@unmed)
         else
             flash[:alert] = "Algo deu errado. Não foi possível atualizar o cadastro."
             render :new
@@ -44,9 +44,9 @@ class TypeitemsController < ApplicationController
 
     def destroy
 
-        if @typeitem.destroy(typeitem_params)
+        if @unmed.destroy(unmed_params)
             flash[:notice] = "Cadastro excluído com sucesso."
-            redirect_to typeitem_path(@typeitem)
+            redirect_to unmed_path(@unmed)
         else
             flash[:alert] = "Algo deu errado. Não foi possível excluir o registro."
             render :new
@@ -56,12 +56,12 @@ class TypeitemsController < ApplicationController
 
     private
 
-    def set_typeitem
-        @typeitem = Typeitem.find(params[:id])
+    def set_unmed
+        @unmed = Unmed.find(params[:id])
     end
 
-    def typeitem_params
-        params.require(:typeitem).permit(:name)
+    def unmed_params
+        params.require(:unmed).permit(:abreviacao, :descricao)
     end
-
+  
 end

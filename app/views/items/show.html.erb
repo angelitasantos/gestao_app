@@ -1,0 +1,40 @@
+<div class="dashboard">
+
+    <div class="row">
+
+        <div class="col-2">
+            <%= render 'shared/sidebar' %>
+        </div>
+
+        <div class="container-dashboard col-10">
+
+            <div class="container-devise mx-5 my-5">
+
+                <h1 class="mb-5">Cadastro</h1>
+
+                <p> <strong>Descrição:</strong><%= @item.descricao %></p>
+                <p> <strong>Tipo:</strong><%= @item.tipo %></p>
+                <p> <strong>Tipo Item:</strong><%= @item.typeitem_id %></p>
+                <p> <strong>Categoria:</strong><%= @item.category_id %></p>
+                <p> <strong>UnMed:</strong><%= @item.unmed_id %></p>
+                <p> <strong>NCM:</strong><%= @item.ncm_id %></p>
+                <p> <strong>Est Seg:</strong><%= @item.estseg %></p>
+                <p> <strong>Leadtime:</strong><%= @item.leadtime %></p>
+                <p> <strong>Altura:</strong><%= @item.altura %></p>
+                <p> <strong>Comprimento:</strong><%= @item.comprimento %></p>
+                <p> <strong>Largura:</strong><%= @item.largura %></p>
+                <p> <strong>Pesobruto:</strong><%= @item.pesobruto %></p>
+                <p> <strong>Pesoliquido:</strong><%= @item.pesoliquido %></p>
+                <p> <strong>Lastro:</strong><%= @item.lastro %></p>
+                <p class="mb-5"> <strong>Camada:</strong><%= @item.camada %></p>
+
+                <%= link_to 'Editar', edit_item_path(@item), class:"btn btn-secondary mr-3" %>
+                <%= link_to 'Voltar', items_path, class:"btn btn-secondary" %>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
