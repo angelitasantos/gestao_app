@@ -8,30 +8,29 @@
 }
 
 h1, h2, h3, h4, h5, h6, p {
-    font-weight: 300;
+    font-weight: 400;
     text-align: center;
     margin-bottom: 5px;
 }
 
 h1 {
-    font-size: 2.7rem;
+    font-size: 2.5rem;
 }
 
 h2 {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
 }
 
 h3 {
-    font-size: 2.1rem;
+    font-size: 1.9rem;
 }
 
 h4 {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
 }
 
 h5 {
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 1.4rem;
 }
 
 h6 {
@@ -77,37 +76,9 @@ li {
     list-style-type: none;
     padding: 5px;
 }
-
-.text-gray-100 {
-    color: #f8f9fc !important;
-}
-  
-.text-gray-200 {
-    color: #eaecf4 !important;
-}
-  
-.text-gray-300 {
-    color: #dddfeb !important;
-}
-  
-.text-gray-400 {
-    color: #d1d3e2 !important;
-}
-  
-.text-gray-500 {
-    color: #b7b9cc !important;
-}
   
 .text-gray-600 {
     color: #858796 !important;
-}
-  
-.text-gray-700 {
-    color: #6e707e !important;
-}
-  
-.text-gray-800 {
-    color: #5a5c69 !important;
 }
   
 .text-gray-900 {
@@ -146,7 +117,7 @@ footer.sticky-footer {
 }
   
 
-/* --------------------------- Topbar ----------------------------- */
+/* --------------------------- Navbar ----------------------------- */
 
 .topbar {
     height: 3rem;
@@ -165,16 +136,6 @@ footer.sticky-footer {
 
 @media screen and (max-width: 576px) {
 
-    h1 {
-        font-size: 2.5rem;
-    }
     
-    h2 {
-        font-size: 2.2rem;
-    }
-    
-    h3 {
-        font-size: 1.9rem;
-    }
 
 }
