@@ -2,9 +2,8 @@
 /* ---------------------- Configuração Básica ---------------------- */
 /* ----------------------------------------------------------------- */
 
-.container-white {
-    background: white;
-    margin-top: 70px;
+.page-home {
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -76,6 +75,10 @@ li {
     list-style-type: none;
     padding: 5px;
 }
+
+.text-gray-200 {
+    color: #eaecf4 !important;
+}
   
 .text-gray-600 {
     color: #858796 !important;
@@ -97,30 +100,6 @@ footer.sticky-footer .copyright {
 
 footer.sticky-footer {
     width: 100%;
-}
-
-
-/* ------------------------ Page Wrapper --------------------------- */
-
-#wrapper {
-    display: flex;
-}
-  
-#wrapper #content-wrapper {
-    background-color: #f8f9fc;
-    width: 100%;
-    overflow-x: hidden;
-}
-  
-#wrapper #content-wrapper #content {
-    flex: 1 0 auto;
-}
-  
-
-/* --------------------------- Navbar ----------------------------- */
-
-.topbar {
-    height: 3rem;
 }
 
 .img-profile {
