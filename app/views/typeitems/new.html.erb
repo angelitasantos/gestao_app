@@ -1,25 +1,19 @@
-<div class="dashboard">
+<div id="layoutSidenav_content">
 
-    <div class="row">
+    <main>
 
-        <div class="col-2">
-            <%= render 'shared/sidebar' %>
-        </div>
+        <div class="container-fluid">
 
-        <div class="container-dashboard col-10">
+            <h3 class="my-5">Adicionar Tipo de Itens</h3>
 
-            <div class="container-devise mx-5 my-5">
+            <%= render 'form', typeitem: @typeitem %>
 
-                <h1 class="mb-5">Adicionar Tipo de Itens</h1>
-
-                <%= render 'form', typeitem: @typeitem %>
-
-                <%= link_to 'Voltar', typeitems_path, class:"btn btn-secondary" %>
-
-            </div>
+            <%= link_to 'Voltar', typeitems_path, class:"btn btn-secondary" %>
             
         </div>
 
-    </div>
+    </main>
+
+    <%= render 'shared/footer' %>
 
 </div>

@@ -1,34 +1,28 @@
-<div class="dashboard">
+<div id="layoutSidenav_content">
 
-    <div class="row">
+    <main>
 
-        <div class="col-2">
-            <%= render 'shared/sidebar' %>
+        <div class="container-fluid">
+
+            <p id="notice"><%= notice %></p>
+
+            <h3 class="my-5">Cadastro</h3>
+
+            <p> <strong>Abreviação:</strong>
+                <%= @unmed.abreviacao %>
+            </p>
+
+            <p class="mb-5"> <strong>Descrição:</strong>
+                <%= @unmed.descricao %>
+            </p>
+
+            <%= link_to 'Editar', edit_unmed_path(@unmed), class:"btn btn-secondary mr-3" %>
+            <%= link_to 'Voltar', unmeds_path, class:"btn btn-secondary" %>
+            
         </div>
 
-        <div class="container-dashboard col-10">
+    </main>
 
-            <div class="container-devise mx-5 my-5">
-
-                <p id="notice"><%= notice %></p>
-
-                <h1 class="mb-5">Cadastro</h1>
-
-                <p> <strong>Abreviação:</strong>
-                    <%= @unmed.abreviacao %>
-                </p>
-
-                <p class="mb-5"> <strong>Descrição:</strong>
-                    <%= @unmed.descricao %>
-                </p>
-
-                <%= link_to 'Editar', edit_unmed_path(@unmed), class:"btn btn-secondary mr-3" %>
-                <%= link_to 'Voltar', unmeds_path, class:"btn btn-secondary" %>
-
-            </div>
-
-        </div>
-
-    </div>
+    <%= render 'shared/footer' %>
 
 </div>

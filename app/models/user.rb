@@ -7,5 +7,5 @@ class User < ApplicationRecord
   validates :fullname, presence: true, length: { maximum: 70 }
   validates :organization, presence: false, length: { maximum: 150 }
 
-  has_one :company
+  
 end

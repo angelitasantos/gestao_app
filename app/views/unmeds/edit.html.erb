@@ -1,26 +1,20 @@
-<div class="dashboard">
+<div id="layoutSidenav_content">
 
-    <div class="row">
+    <main>
 
-        <div class="col-2">
-            <%= render 'shared/sidebar' %>
-        </div>
-
-        <div class="container-dashboard col-10">
-
-            <div class="container-devise mx-5 my-5">
-
-                <h1 class="mb-5">Editar Unidade de Medida</h1>
-
-                <%= render 'form', unmed: @unmed %>
-
-                <%= link_to 'Mostrar', @unmed, class:"btn btn-secondary mr-3" %> 
-                <%= link_to 'Voltar', unmeds_path, class:"btn btn-secondary" %>
-
-            </div>
+        <div class="container-fluid">
             
+            <h3 class="my-5">Editar Unidade de Medida</h3>
+
+            <%= render 'form', unmed: @unmed %>
+
+            <%= link_to 'Mostrar', @unmed, class:"btn btn-secondary mr-3" %> 
+            <%= link_to 'Voltar', unmeds_path, class:"btn btn-secondary" %>
+
         </div>
 
-    </div>
+    </main>
+
+    <%= render 'shared/footer' %>
 
 </div>
