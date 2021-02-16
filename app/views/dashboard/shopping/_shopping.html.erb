@@ -1,25 +1,41 @@
-<!-- Financial -->
-<div class="tab-pane fade show" id="v-pills-dashboard" role="tabpanel" aria-labelledby="v-pills-dashboard-tab">
-    <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
-        <li class="nav-item">
-            <a class="nav-link active" id="pills-dashboard-tab-01" data-toggle="pill" href="#pills-dashboard-01" role="tab" aria-controls="pills-dashboard-01" aria-selected="false">Pedidos</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" id="pills-dashboard-tab-02" data-toggle="pill" href="#pills-dashboard-02" role="tab" aria-controls="pills-dashboard-02" aria-selected="false">Compras em Atraso</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" id="pills-dashboard-tab-03" data-toggle="pill" href="#pills-dashboard-03" role="tab" aria-controls="pills-dashboard-03" aria-selected="false">Devoluções</a>
-        </li>
-    </ul>
-    <div class="tab-content" id="pills-tabContent">
-        <div class="tab-pane fade show active" id="pills-dashboard-01" role="tabpanel" aria-labelledby="pills-dashboard-tab-01">
-            <%= render 'dashboard/shopping/requests' %>
+<div id="layoutSidenav_content">
+
+    <main>
+
+        <div class="container-fluid">
+            
+            <div class="tab-pane fade show" id="v-pills-dashboard" role="tabpanel" aria-labelledby="v-pills-dashboard-tab">
+
+                <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="pills-dashboard-tab-01" data-toggle="pill" href="#pills-dashboard-01" role="tab" aria-controls="pills-dashboard-01" aria-selected="false">Pedidos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-dashboard-tab-02" data-toggle="pill" href="#pills-dashboard-02" role="tab" aria-controls="pills-dashboard-02" aria-selected="false">Compras em Atraso</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-dashboard-tab-03" data-toggle="pill" href="#pills-dashboard-03" role="tab" aria-controls="pills-dashboard-03" aria-selected="false">Devoluções</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-dashboard-01" role="tabpanel" aria-labelledby="pills-dashboard-tab-01">
+                        <%= render 'dashboard/shopping/requests' %>
+                    </div>
+                    <div class="tab-pane fade" id="pills-dashboard-02" role="tabpanel" aria-labelledby="pills-dashboard-tab-02">
+                        <%= render 'dashboard/shopping/late' %>
+                    </div>
+                    <div class="tab-pane fade" id="pills-dashboard-03" role="tabpanel" aria-labelledby="pills-dashboard-tab-03">
+                        <%= render 'dashboard/shopping/devolutions' %>
+                    </div>
+                </div>
+
+            </div><!-- Shopping -->
+
         </div>
-        <div class="tab-pane fade" id="pills-dashboard-02" role="tabpanel" aria-labelledby="pills-dashboard-tab-02">
-            <%= render 'dashboard/shopping/late' %>
-        </div>
-        <div class="tab-pane fade" id="pills-dashboard-03" role="tabpanel" aria-labelledby="pills-dashboard-tab-03">
-            <%= render 'dashboard/shopping/devolutions' %>
-        </div>
-    </div>
-</div><!-- Financial -->
+
+    </main>
+
+    <%= render 'shared/footer' %>
+
+</div>
