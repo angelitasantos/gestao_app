@@ -14,7 +14,7 @@ class CategoriesTest < ApplicationSystemTestCase
     visit categories_url
     click_on "New Category"
 
-    fill_in "Name", with: @category.name
+    fill_in "Descricao", with: @category.descricao
     fill_in "User", with: @category.user_id
     click_on "Create Category"
 
@@ -26,7 +26,7 @@ class CategoriesTest < ApplicationSystemTestCase
     visit categories_url
     click_on "Edit", match: :first
 
-    fill_in "Name", with: @category.name
+    fill_in "Descricao", with: @category.descricao
     fill_in "User", with: @category.user_id
     click_on "Update Category"
 

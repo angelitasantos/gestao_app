@@ -8,9 +8,9 @@ class UsersController < ApplicationController
     @user = current_user
 
     if @user.update_attributes(current_user_params)
-      flash[:notice] = "Saved successfully"
+      flash[:notice] = "Cadastro atualizado com sucesso."
     else
-      flash[:alert] = "Opps something went wrong! Did not update."
+      flash[:alert] = "Algo deu errado. Não foi possível efetuar o cadastro."
     end
     redirect_to dashboard_path
 

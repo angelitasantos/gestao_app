@@ -1,12 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  codigo: MyString
   descricao: MyString
+  inativo: MyString
   tipo: 1
-  typeitem_id: 1
-  category_id: 1
-  unmed_id: 1
-  ncm_id: 1
+  embvenda: 1.5
   estseg: 1.5
   leadtime: 1.5
   altura: 1.5
@@ -16,15 +15,19 @@ one:
   pesoliquido: 1.5
   lastro: 1.5
   camada: 1.5
+  ean: MyString
   user: one
+  category: one
+  ncm: one
+  typeitem: one
+  unmed: one
 
 two:
+  codigo: MyString
   descricao: MyString
+  inativo: MyString
   tipo: 1
-  typeitem_id: 1
-  category_id: 1
-  unmed_id: 1
-  ncm_id: 1
+  embvenda: 1.5
   estseg: 1.5
   leadtime: 1.5
   altura: 1.5
@@ -34,4 +37,9 @@ two:
   pesoliquido: 1.5
   lastro: 1.5
   camada: 1.5
+  ean: MyString
   user: two
+  category: two
+  ncm: two
+  typeitem: two
+  unmed: two

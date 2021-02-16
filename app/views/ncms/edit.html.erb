@@ -1,26 +1,20 @@
-<div class="dashboard">
+<div id="layoutSidenav_content">
 
-    <div class="row">
+    <main>
 
-        <div class="col-2">
-            <%= render 'shared/sidebar' %>
+        <div class="container-fluid">
+
+            <h3 class="my-5">Editar NCM</h3>
+
+            <%= render 'form', ncm: @ncm %>
+
+            <%= link_to 'Mostrar', @ncm, class:"btn btn-secondary mr-3" %>
+            <%= link_to 'Voltar', ncms_path, class:"btn btn-secondary" %>
+            
         </div>
 
-        <div class="container-dashboard col-10">
+    </main>
 
-            <div class="container-devise mx-5 my-5">
-
-                <h1 class="mb-5">Editar NCM</h1>
-
-                <%= render 'form', ncm: @ncm %>
-
-                <%= link_to 'Mostrar', @ncm, class:"btn btn-secondary mr-3" %> 
-                <%= link_to 'Voltar', ncms_path, class:"btn btn-secondary" %>
-
-            </div>
-    
-        </div>
-
-    </div>
+    <%= render 'shared/footer' %>
 
 </div>

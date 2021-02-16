@@ -11,6 +11,7 @@ class DashboardsController < ApplicationController
   end
 
   def registrations
+    @items = Item.where(user_id: current_user.id).order(:descricao)
   end
 
   def shopping

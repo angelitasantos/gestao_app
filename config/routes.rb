@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
 
+  resources :items
+  resources :ncms
+  resources :categories
+
+
   resources :typeitems
   resources :unmeds
-
-  resources :categories
-  resources :ncms
-  resources :books
-  resources :items
 
   get '/dashboard', to: 'users#dashboard'
   get '/financial', to: 'dashboards#financial'

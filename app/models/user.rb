@@ -4,8 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :fullname, presence: true, length: { maximum: 70 }
-  validates :organization, presence: false, length: { maximum: 150 }
-
-  
+  has_many :categories
+  has_many :ncms
+  has_many :items
 end

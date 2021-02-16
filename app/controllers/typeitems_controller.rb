@@ -3,7 +3,7 @@ class TypeitemsController < ApplicationController
     before_action :set_typeitem, only: [:show, :edit, :update, :destroy]
 
     def index
-        @typeitems = Typeitem.all.order(:id)
+        @typeitems = Typeitem.all.order(:name)
     end
 
     def show 

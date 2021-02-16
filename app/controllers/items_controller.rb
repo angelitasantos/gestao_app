@@ -1,70 +1,68 @@
 class ItemsController < ApplicationController
-    before_action :authenticate_user!
-    before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_item, only: %i[ show edit update destroy ]
 
-    def index
-        @items = Item.all.order(:descricao)
+  # GET /items or /items.json
+  def index
+    @items = Item.where(user_id: current_user.id).order(:descricao)
+  end
+
+  # GET /items/1 or /items/1.json
+  def show
+  end
+
+  # GET /items/new
+  def new
+    @item = Item.new
+  end
+
+  # GET /items/1/edit
+  def edit
+  end
+
+  # POST /items or /items.json
+  def create
+    @item = Item.new(item_params)
+    respond_to do |format|
+      if @item.save
+        format.html { redirect_to @item, notice: "Item was successfully created." }
+        format.json { render :show, status: :created, location: @item }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @item.errors, status: :unprocessable_entity }
+      end
     end
+  end
 
-    def show 
+  # PATCH/PUT /items/1 or /items/1.json
+  def update
+    respond_to do |format|
+      if @item.update(item_params)
+        format.html { redirect_to @item, notice: "Item was successfully updated." }
+        format.json { render :show, status: :ok, location: @item }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @item.errors, status: :unprocessable_entity }
+      end
     end
+  end
 
-    def new
-        @item = Item.new
+  # DELETE /items/1 or /items/1.json
+  def destroy
+    @item.destroy
+    respond_to do |format|
+      format.html { redirect_to items_url, notice: "Item was successfully destroyed." }
+      format.json { head :no_content }
     end
+  end
 
-    def edit
-    end
-    
-    def create
-
-        @item = Item.new(item_params)
-
-        if @item.save
-            flash[:notice] = "Cadastro efetuado com sucesso."
-            redirect_to item_path(@item)
-        else
-            flash[:alert] = "Algo deu errado. Não foi possível efetuar o cadastro."
-            render :new
-        end
-
-    end
-
-    def update
-
-        if @item.update(item_params)
-            flash[:notice] = "Cadastro atualizado com sucesso."
-            redirect_to item_path(@item)
-        else
-            flash[:alert] = "Algo deu errado. Não foi possível atualizar o cadastro."
-            render :new
-        end
-
-    end
-
-    def destroy
-
-        if @item.destroy(item_params)
-            flash[:notice] = "Cadastro excluído com sucesso."
-            redirect_to item_path(@item)
-        else
-            flash[:alert] = "Algo deu errado. Não foi possível excluir o registro."
-            render :new
-        end
-        
-    end
-
-    private
-
+  private
+    # Use callbacks to share common setup or constraints between actions.
     def set_item
-        @item = Item.find(params[:id])
+      @item = Item.find(params[:id])
     end
 
+    # Only allow a list of trusted parameters through.
     def item_params
-        params.require(:item).permit(:descricao, :tipo, :typeitem_id, :category_id, :unmed_id, 
-                                    :ncm_id, :estseg, :leadtime, :altura, :comprimento, 
-                                    :largura, :pesobruto, :pesoliquido, :lastro, :camada)
-                                    .merge(user_id: current_user.id)
+      params.require(:item).permit(:codigo, :descricao, :inativo, :tipo, :embvenda, :estseg, :leadtime, :altura, :comprimento, :largura, :pesobruto, :pesoliquido, :lastro, :camada, :ean, :user_id, :category_id, :ncm_id, :typeitem_id, :unmed_id).merge(user_id: current_user.id)
     end
-
 end

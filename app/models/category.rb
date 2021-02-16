@@ -1,5 +1,5 @@
 class Category < ApplicationRecord
   belongs_to :user
   has_many :items
-  validates :name, presence: true
+  validates :descricao, presence: true, length: { maximum: 30 }
 end

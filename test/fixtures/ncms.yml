@@ -3,17 +3,17 @@
 one:
   codigo: MyString
   descricao: MyString
-  tipoicm: 1
-  percicm: 1.5
-  percipi: 1.5
-  percst: 1.5
+  tipoicm: MyString
+  percicm: MyString
+  percipi: MyString
+  percst: MyString
   user: one
 
 two:
   codigo: MyString
   descricao: MyString
-  tipoicm: 1
-  percicm: 1.5
-  percipi: 1.5
-  percst: 1.5
+  tipoicm: MyString
+  percicm: MyString
+  percipi: MyString
+  percst: MyString
   user: two

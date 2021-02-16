@@ -3,7 +3,7 @@ class UnmedsController < ApplicationController
     before_action :set_unmed, only: [:show, :edit, :update, :destroy]
 
     def index
-        @unmeds = Unmed.all.order(:descricao)
+        @unmeds = Unmed.all.order(:abreviacao)
     end
 
     def show 

@@ -1,24 +1,25 @@
 <div class="container mb-5">
 
-    <div class="container-devise form-group">
+  <div class="container-devise form-group">
 
-      <%= simple_form_for(@ncm) do |f| %>
-      
-        <%= f.error_notification %>
-        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+    <%= simple_form_for(@ncm) do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-        <div class="">
-          <%= f.input :codigo %>
-          <%= f.input :descricao %>
-          <%= f.input :tipoicm %>
-          <%= f.input :percicm %>
-          <%= f.input :percipi %>
-          <%= f.input :percst %>
-          <%= f.button :submit, 'Salvar', class:"btn btn-secondary" %>
-        </div>
-        
-      <% end %>
+      <div class="form-inputs">
+        <%= f.input :codigo %>
+        <%= f.input :descricao %>
+        <%= f.input :tipoicm %>
+        <%= f.input :percicm %>
+        <%= f.input :percipi %>
+        <%= f.input :percst %>
+      </div>
 
-    </div>
+      <div class="form-actions">
+        <%= f.button :submit, 'Salvar', class:"btn btn-secondary" %>
+      </div>
+    <% end %>
+
+  </div>
 
 </div>
