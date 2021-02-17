@@ -1,25 +1,59 @@
-# README
+## resume
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+git
+https://git-scm.com/
 
-Things you may want to cover:
+nodejs
+https://nodejs.org/en/
 
-* Ruby version
+npm
+https://www.npmjs.com/
 
-* System dependencies
+visual studio code
+https://code.visualstudio.com/
 
-* Configuration
+template
+https://startbootstrap.com/template/sb-admin
 
-* Database creation
+postgreSQL
+https://www.postgresql.org/
 
-* Database initialization
+ruby
+https://www.ruby-lang.org/pt/
 
-* How to run the test suite
+rails
+https://rubyonrails.org/
 
-* Services (job queues, cache servers, search engines, etc.)
+yarn
+https://yarnpkg.com/
 
-* Deployment instructions
 
-* ...
-created project gestao_app
+
+### gems
+
+bootstrap
+https://getbootstrap.com/
+
+fontawesome
+https://github.com/FortAwesome/font-awesome-sass
+
+devise
+https://github.com/heartcombo/devise
+
+simple_form
+https://github.com/heartcombo/simple_form
+
+action_text
+https://rubygems.org/gems/actiontext/versions/6.0.0.rc1
+https://edgeguides.rubyonrails.org/action_text_overview.html
+
+active_storage
+https://edgeguides.rubyonrails.org/active_storage_overview.html
+https://github.com/rails/rails/tree/main/activestorage
+
+noty
+https://ned.im/noty/#/installation
+
+i18n
+https://guides.rubyonrails.org/i18n.html
+
