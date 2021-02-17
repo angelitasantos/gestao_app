@@ -4,7 +4,6 @@ class ItemsController < ApplicationController
   # GET /items or /items.json
   def index
     @items = Item.where(user_id: current_user.id).order(:descricao)
-    redirect_to registrations_path()
   end
 
   # GET /items/1 or /items/1.json

@@ -8,17 +8,12 @@
 
             <h3 class="my-5">Cadastro</h3>
 
-            <p> <strong>id:</strong>
-                <%= @typeitem.id %>
-            </p>
-
-            <p class="mb-5"> <strong>Name:</strong>
-                <%= @typeitem.name %>
-            </p>
-
-            <%= link_to 'Editar', edit_typeitem_path(@typeitem), class:"btn btn-secondary mr-3" %>
-            <%= link_to 'Voltar', typeitems_path, class:"btn btn-secondary" %>
+            <%= link_to 'Editar', edit_typeitem_path(@typeitem), class:"btn btn-sm btn-success mr-3 my-2" %>
+            <%= link_to 'Voltar', typeitems_path, class:"btn btn-sm btn-success my-2" %>
             
+            <p> <strong>id: </strong><%= @typeitem.id %></p>
+            <p> <strong>Descrição: </strong><%= @typeitem.name %></p>
+
         </div>
 
     </main>

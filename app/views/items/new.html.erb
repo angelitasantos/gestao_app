@@ -6,9 +6,9 @@
 
             <h3 class="my-5">Adicionar Item</h3>
 
+            <%= link_to 'Voltar', items_path, class:"btn btn-sm btn-success mb-2" %>
+            
             <%= render 'form', item: @item %>
-
-            <%= link_to 'Voltar', registrations_path, class:"btn btn-secondary" %>
             
         </div>
 

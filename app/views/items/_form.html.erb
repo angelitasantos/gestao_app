@@ -3,35 +3,80 @@
   <div class="container-devise form-group">
 
     <%= simple_form_for(@item) do |f| %>
+
       <%= f.error_notification %>
       <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
       <div class="form-inputs">
-        <%= f.input :codigo %>
-        <%= f.input :descricao %>
-        <%= f.input :inativo %>
-        <%= f.input :tipo, as: :radio_buttons, collection: [['0', 'PRODUTO'], ['1', 'SERVICO']], label_method: :second, value_method: :first %>
-        <%= f.input :embvenda %>
-        <%= f.input :estseg %>
-        <%= f.input :leadtime %>
-        <%= f.input :altura %>
-        <%= f.input :comprimento %>
-        <%= f.input :largura %>
-        <%= f.input :pesobruto %>
-        <%= f.input :pesoliquido %>
-        <%= f.input :lastro %>
-        <%= f.input :camada %>
-        <%= f.input :ean %>
-        <%= f.association :user %>
-        <%= f.association :category %>
-        <%= f.association :ncm %>
-        <%= f.association :typeitem %>
-        <%= f.association :unmed %>
+
+        <div class="row">
+          <div class="col-sm-12">
+            <%= f.input :descricao %>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <%= f.input :tipo, as: :radio_buttons, collection: [['0', 'PRODUTO'], ['1', 'SERVICO']], label_method: :second, value_method: :first %>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <%= f.input :codigo %>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <%= f.input :ean %>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <%= f.label 'Marque para desativar o item' %>
+            <%= f.input :inativo %>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <%= f.association :category, label: 'Categoria', prompt: "Selecione uma categoria", collection: Category.where(user_id: current_user.id).order(:descricao), label_method: :descricao, value_method: :id %>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <%= f.association :ncm, label: 'NCM', prompt: "Selecione um NCM", collection: Ncm.where(user_id: current_user.id).order(:codigo), label_method: :codigo, value_method: :id %>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <%= f.association :typeitem, label: 'Tipo Item', prompt: "Selecione um tipo", collection: Typeitem.all.order(:name), label_method: :name, value_method: :id %>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <%= f.association :unmed, label: 'Unidade', prompt: "Selecione uma unidade", collection: Unmed.all.order(:abreviacao), label_method: :abreviacao, value_method: :id %>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <%= f.input :embvenda, label: 'Embalagem Venda' %>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <%= f.input :estseg, label: 'Estoque Segurança' %>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <%= f.input :leadtime, label: 'Tempo de Reposição' %>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <%= f.input :altura %>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <%= f.input :comprimento %>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <%= f.input :largura %>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <%= f.input :pesobruto %>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <%= f.input :pesoliquido %>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <%= f.input :lastro %>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <%= f.input :camada %>
+          </div>
+
+        </div>
+
       </div>
 
       <div class="form-actions">
-        <%= f.button :submit, 'Salvar', class:"btn btn-secondary" %>
+        <%= f.button :submit, 'Salvar', class:"btn btn-sm btn-success my-3" %>
       </div>
+
     <% end %>
 
   </div>

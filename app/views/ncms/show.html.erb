@@ -8,16 +8,16 @@
 
       <h3 class="my-5">Cadastro</h3>
 
-      <p><strong>Codigo:</strong><%= @ncm.codigo %></p>
-      <p><strong>Descricao:</strong><%= @ncm.descricao %></p>
-      <p><strong>Tipoicm:</strong><%= @ncm.tipoicm %></p>
-      <p><strong>Percicm:</strong><%= @ncm.percicm %></p>
-      <p><strong>Percipi:</strong><%= @ncm.percipi %></p>
-      <p><strong>Percst:</strong><%= @ncm.percst %></p>
-      <p><strong>User:</strong><%= @ncm.user_id %></p>
-
-      <%= link_to 'Editar', edit_ncm_path(@ncm), class:"btn btn-secondary mr-3" %>
-      <%= link_to 'Voltar', ncms_path, class:"btn btn-secondary" %>
+      <%= link_to 'Editar', edit_ncm_path(@ncm), class:"btn btn-sm btn-success mr-3 my-2" %>
+      <%= link_to 'Voltar', ncms_path, class:"btn btn-sm btn-success my-2" %>
+      
+      <p><strong>Código: </strong><%= @ncm.codigo %></p>
+      <p><strong>Descrição: </strong><%= @ncm.descricao %></p>
+      <p><strong>Tipo ICM: </strong><%= @ncm.tipoicm %></p>
+      <p><strong>% ICM: </strong><%= @ncm.percicm %></p>
+      <p><strong>% IPI: </strong><%= @ncm.percipi %></p>
+      <p><strong>% ST: </strong><%= @ncm.percst %></p>
+      <p><strong>Usuário: </strong><%= @ncm.user_id %></p>
         
     </div>
 

@@ -6,9 +6,9 @@
 
             <h3 class="my-5">Adicionar Tipo de Itens</h3>
 
-            <%= render 'form', typeitem: @typeitem %>
+            <%= link_to 'Voltar', typeitems_path, class:"btn btn-sm btn-success mb-2" %>
 
-            <%= link_to 'Voltar', typeitems_path, class:"btn btn-secondary" %>
+            <%= render 'form', typeitem: @typeitem %>
             
         </div>
 

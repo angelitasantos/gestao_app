@@ -6,4 +6,6 @@ class Item < ApplicationRecord
   belongs_to :unmed
 
   validates :descricao, presence: true, length: { maximum: 80 }
+  validates :codigo, presence: false, length: { maximum: 15 }
+  validates :ean, presence: false, length: { maximum: 15 }
 end

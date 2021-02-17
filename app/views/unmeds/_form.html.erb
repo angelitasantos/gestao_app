@@ -1,20 +1,13 @@
 <div class="container mb-5">
-
     <div class="container-devise form-group">
-
         <%= simple_form_for(@unmed) do |f| %>
-
             <%= f.error_notification %>
             <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
-            <div class="">
+            <div class="col-sm-6 col-md-3">
                 <%= f.input :abreviacao %>
-                <%= f.input :descricao %>
-                <%= f.button :submit, 'Salvar', class:"btn btn-secondary" %>
             </div>
-
+            <%= f.input :descricao %>
+            <%= f.button :submit, 'Salvar', class:"btn btn-sm btn-success" %>     
         <% end %>
-
     </div>
-
 </div>

@@ -8,8 +8,7 @@
       <tr>
         <th>Codigo</th>
         <th>Descricao</th>
-        <th>Inativo</th>
-        <th>Tipo</th>
+        <th>Unmed</th>
         <th>Embvenda</th>
         <th>Estseg</th>
         <th>Leadtime</th>
@@ -21,14 +20,12 @@
         <th>Lastro</th>
         <th>Camada</th>
         <th>Ean</th>
-        <th>User</th>
         <th>Category</th>
         <th>Ncm</th>
         <th>Typeitem</th>
-        <th>Unmed</th>
-        <th class="text-center">Mostrar</th>
+        <th>Tipo</th>
+        <th>Inativo</th>
         <th class="text-center">Alterar</th>
-        <th class="text-center">Excluir</th>
       </tr>
     </thead>
 
@@ -37,8 +34,7 @@
         <tr>
           <td><%= item.codigo %></td>
           <td><%= item.descricao %></td>
-          <td><%= item.inativo %></td>
-          <td><%= item.tipo %></td>
+          <td><%= item.unmed_id %></td>
           <td><%= item.embvenda %></td>
           <td><%= item.estseg %></td>
           <td><%= item.leadtime %></td>
@@ -50,14 +46,12 @@
           <td><%= item.lastro %></td>
           <td><%= item.camada %></td>
           <td><%= item.ean %></td>
-          <td><%= item.user_id %></td>
           <td><%= item.category_id %></td>
           <td><%= item.ncm_id %></td>
           <td><%= item.typeitem_id %></td>
-          <td><%= item.unmed_id %></td>
-          <td class="text-center"><%= link_to '', item, class:"fas fa-eye fa-lg bg-light" %></td>
+          <td><%= item.tipo %></td>
+          <td><%= item.inativo %></td>
           <td class="text-center"><%= link_to '', edit_item_path(item), class:"fas fa-edit fa-lg bg-light" %></td>
-          <td class="text-center"><%= link_to '', item, method: :delete, data: { confirm: 'Você tem certeza que deseja excluir esse registro?' }, class:"fas fa-trash fa-lg bg-light" %></td>
         </tr>
       <% end %>
     </tbody>
@@ -67,6 +61,3 @@
 </div>
 
 <br>
-
-<%= link_to 'Novo', new_item_path, class:"btn btn-secondary mr-3" %>
-<%= link_to 'Voltar', registrations_path, class:"btn btn-secondary" %>

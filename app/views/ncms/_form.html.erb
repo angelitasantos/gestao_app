@@ -6,17 +6,27 @@
       <%= f.error_notification %>
       <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-      <div class="form-inputs">
+      <div class="col-sm-6 col-md-3">
         <%= f.input :codigo %>
-        <%= f.input :descricao %>
-        <%= f.input :tipoicm %>
-        <%= f.input :percicm %>
-        <%= f.input :percipi %>
-        <%= f.input :percst %>
+      </div>
+      <%= f.input :descricao %>
+      <div class="row">
+        <div class="col-sm-6 col-md-3">
+          <%= f.input :tipoicm, prompt: "Selecione um tipo de ICM", label: 'Tipo ICM', as: :select, collection: [['COMUM'], ['ESPECIAL'], ['RET']], value_method: :first %>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <%= f.input :percicm, label: '% ICM' %>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <%= f.input :percipi, label: '% IPI' %>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <%= f.input :percst, label: '% ST' %>
+        </div>
       </div>
 
       <div class="form-actions">
-        <%= f.button :submit, 'Salvar', class:"btn btn-secondary" %>
+        <%= f.button :submit, 'Salvar', class:"btn btn-sm btn-success" %>
       </div>
     <% end %>
 

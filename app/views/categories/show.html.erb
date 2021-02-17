@@ -8,11 +8,11 @@
 
       <h3 class="my-5">Cadastro</h3>
 
+      <%= link_to 'Editar', edit_category_path(@category), class:"btn btn-sm btn-success mr-3 my-2" %>
+      <%= link_to 'Voltar', categories_path, class:"btn btn-sm btn-success my-2" %>
+      
       <p><strong>Descricao:</strong><%= @category.descricao %></p>
       <p><strong>User:</strong><%= @category.user_id %></p>
-
-      <%= link_to 'Editar', edit_category_path(@category), class:"btn btn-secondary mr-3" %>
-      <%= link_to 'Voltar', categories_path, class:"btn btn-secondary" %>
         
     </div>
 
