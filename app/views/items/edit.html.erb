@@ -1,20 +1,13 @@
 <div id="layoutSidenav_content">
-
     <main>
-
         <div class="container-fluid">
-
             <h3 class="my-5">Editar Item</h3>
 
             <%= link_to 'Mostrar', @item, class:"btn btn-sm btn-success mr-3 mb-2" %>
             <%= link_to 'Voltar', items_path, class:"btn btn-sm btn-success mb-2" %>
 
             <%= render 'form', item: @item %>
-
         </div>
-
     </main>
-
     <%= render 'shared/footer' %>
-
 </div>
