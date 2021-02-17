@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   resources :ncms
   resources :categories
 
-
   resources :typeitems
   resources :unmeds
 

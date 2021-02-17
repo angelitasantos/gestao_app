@@ -23,64 +23,6 @@
 
     <h5 class="text-left mb-3 text-gray-800">Filtrar por ...</h5>
 
-    <div class="table-responsive">
-
-        <table class="table table-hover">
-          <thead class="thead-dark">
-            <tr>
-              <th>Codigo</th>
-              <th>Descricao</th>
-              <th>Ativo</th>
-              <th>Tipo</th>
-              <th>Estseg</th>
-              <th>Leadtime</th>
-              <th>Altura</th>
-              <th>Comprimento</th>
-              <th>Largura</th>
-              <th>Peso Bruto</th>
-              <th>Peso Liquido</th>
-              <th>Lastro</th>
-              <th>Camada</th>
-              <th>User</th>
-              <th>Categoria</th>
-              <th>Ncm</th>
-              <th>Unmed</th>
-              <th>Tipo item</th>
-              <th class="text-center">Mostrar</th>
-              <th class="text-center">Alterar</th>
-              <th class="text-center">Excluir</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <% @items.each do |item| %>
-              <tr>
-                <td><%= item.codigo %></td>
-                <td><%= item.descricao %></td>
-                <td><%= item.ativo %></td>
-                <td><%= item.tipo %></td>
-                <td><%= item.estseg %></td>
-                <td><%= item.leadtime %></td>
-                <td><%= item.altura %></td>
-                <td><%= item.comprimento %></td>
-                <td><%= item.largura %></td>
-                <td><%= item.pesobruto %></td>
-                <td><%= item.pesoliquido %></td>
-                <td><%= item.lastro %></td>
-                <td><%= item.camada %></td>
-                <td><%= item.user_id %></td>
-                <td><%= item.category_id %></td>
-                <td><%= item.ncm_id %></td>
-                <td><%= item.unmed_id %></td>
-                <td><%= item.typeitem_id %></td>
-                <td class="text-center"><%= link_to '', item, class:"fas fa-eye fa-lg bg-light" %></td>
-                <td class="text-center"><%= link_to '', edit_item_path(item), class:"fas fa-edit fa-lg bg-light" %></td>
-                <td class="text-center"><%= link_to '', item, method: :delete, data: { confirm: 'Você tem certeza que deseja excluir esse registro?' }, class:"fas fa-trash fa-lg bg-light" %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-
-      </div>
+    <%= render 'items/index' %>
 
 </div><!-- Items -->

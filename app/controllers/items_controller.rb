@@ -4,6 +4,7 @@ class ItemsController < ApplicationController
   # GET /items or /items.json
   def index
     @items = Item.where(user_id: current_user.id).order(:descricao)
+    redirect_to registrations_path()
   end
 
   # GET /items/1 or /items/1.json
@@ -24,7 +25,7 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     respond_to do |format|
       if @item.save
-        format.html { redirect_to @item, notice: "Item was successfully created." }
+        format.html { redirect_to @item, notice: "Cadastro efetuado com sucesso." }
         format.json { render :show, status: :created, location: @item }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -37,7 +38,7 @@ class ItemsController < ApplicationController
   def update
     respond_to do |format|
       if @item.update(item_params)
-        format.html { redirect_to @item, notice: "Item was successfully updated." }
+        format.html { redirect_to @item, notice: "Cadastro atualizado com sucesso." }
         format.json { render :show, status: :ok, location: @item }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -50,7 +51,7 @@ class ItemsController < ApplicationController
   def destroy
     @item.destroy
     respond_to do |format|
-      format.html { redirect_to items_url, notice: "Item was successfully destroyed." }
+      format.html { redirect_to items_url, notice: "Cadastro excluído com sucesso." }
       format.json { head :no_content }
     end
   end
