@@ -1,7 +1,5 @@
 <div id="layoutSidenav_content">
-
   <main>
-
     <div class="container-fluid">
 
       <p id="notice"><%= notice %></p>
@@ -12,16 +10,13 @@
       <%= link_to 'Voltar', registrations_path, class:"btn btn-sm btn-success mb-2" %>
       
       <div class="table-responsive">
-
         <table class="table table-hover">
-
           <thead class="thead-dark">
             <tr>
               <th>Descrição</th>
               <th class="text-center">Alterar</th>
             </tr>
           </thead>
-
           <tbody>
             <% @categories.each do |category| %>
             <tr>
@@ -30,17 +25,10 @@
             </tr>
             <% end %>
           </tbody>
-
         </table>
-
       </div> 
-
       <br>
-      
     </div>
-
   </main>
-
   <%= render 'shared/footer' %>
-
 </div>
